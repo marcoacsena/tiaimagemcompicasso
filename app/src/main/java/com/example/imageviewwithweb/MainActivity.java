@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ivImage = findViewById(R.id.ivImage);
-        Picasso.get().load("https://cdn.pixabay.com/photo/2017/01/11/11/33/cake-1971552_1280.jpg")
+        String url = "https://cdn.pixabay.com/photo/2017/01/11/11/33/cake-1971552_1280.jpg";
+        Picasso.get().load(url)
                 .resize(200, 100)
                 .centerCrop()
                 .into(ivImage);
