@@ -2,10 +2,16 @@ package com.example.imageviewwithweb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+
+import static android.content.Intent.ACTION_VIEW;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +28,19 @@ public class MainActivity extends AppCompatActivity {
                 .resize(200, 100)
                 .centerCrop()
                 .into(ivImage);
+
+        if(url != null){
+
+            ivImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(ACTION_VIEW);
+                    i.setData(Uri.parse("http://www.correios.com.br/"));
+                    startActivity(i);
+                }
+            });
+
+        }
 
     }
 }
