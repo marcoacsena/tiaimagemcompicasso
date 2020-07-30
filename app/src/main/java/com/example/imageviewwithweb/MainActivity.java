@@ -24,15 +24,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ivImage = findViewById(R.id.ivImage);
-        String url = "https://cdn.pixabay.com/photo/2017/01/11/11/33/cake-1971552_1280.jpg";
-//        Picasso.with(this).load(url)
-//                .resize(200, 100)
-//                .centerCrop()
-//                .into(ivImage);
-
-        Glide.with(getApplicationContext())
-                .load(url)
+        String url = "https://cdn.pixabay.com/photo/2017/01/11/11/33/cake-1971552_1280.html";
+        Picasso.with(this).load(url)
+                .resize(200, 30)
+                .centerCrop()
+                .error(R.drawable.imagem_erro)
                 .into(ivImage);
+
+//        Glide.with(getApplicationContext())
+//                .load(url)
+//                .into(ivImage);
 
         if(url != null){
 
