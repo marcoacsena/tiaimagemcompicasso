@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ivImage = findViewById(R.id.ivImage);
-        String url = "https://cdn.pixabay.com/photo/2017/01/11/11/33/cake-1971552_1280.html";
+        String url = "https://cdn.pixabay.com/photo/2017/01/11/11/33/cake-1971552_1280.jg";
         Picasso.with(this).load(url)
-                .resize(200, 30)
-                .centerCrop()
+                .resize(300, 30)
+                .placeholder(R.drawable.ic_mensagem_erro_2)
                 .error(R.drawable.imagem_erro)
                 .into(ivImage);
 
